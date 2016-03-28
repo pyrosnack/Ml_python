@@ -4,7 +4,7 @@
 lines_parse.py
 ~~~~~~~~~~
 
-Parsing lines before feeding them into ML algorithms
+Parsing lines before feeding them into ML algorithms.
 """
 
 def char_range(c1, c2):
