@@ -3,7 +3,7 @@ nielsen_network.py
 ~~~~~~~~~~
 
 A module to implement the stochastic gradient descent learning
-algorithm for a feedforward neural network.  Gradients are calculated
+algorithm for a feedforward neural network. Gradients are calculated
 using backpropagation. Based on the online book by Nielsen.
 """
 
