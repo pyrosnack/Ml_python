@@ -55,7 +55,7 @@ def demog_score(ypred, ytruth):
     score = min(prec, rec)
     res_s = "%8.2f %8.2f %8.2f" % (prec, rec, score)
     if product == 0:
-        res_s = res_s + " mais y a aucun positif"
+        res_s = res_s + " but the is no positive"
     return (score, res_s)
 
 ################################## Main Object #################################
