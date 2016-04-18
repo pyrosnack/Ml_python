@@ -162,7 +162,8 @@ def apply_all_treshold(nn, test_set, treshold_possibles, treshold_last_values,
     tresh_total = [sum(lv) / len(lv) for lv in treshold_last_values]
     chosen_i = np.argmax(tresh_total)
     chosen_tresh = treshold_possibles[chosen_i]
-    res_string = "                %4.2f          %8.2f" % (chosen_tresh, tresh_total[chosen_i])
+    res_string = "                %4.2f          %8.2f" % (chosen_tresh,
+                                                           tresh_total[chosen_i])
     return chosen_tresh, treshold_last_values, res_string
 
 def split_for_cva(training_set):
@@ -174,6 +175,8 @@ def split_for_cva(training_set):
         else:
             res_training_set.append(l)
     return res_training_set, res_test_set
+
+treshold_possibles = np.linspace(0.65, 0.85, 20)
 
 def sgd(nn, training_set, epochs, batch_size, alpha,
         lmbda = 0.0,
@@ -187,7 +190,6 @@ def sgd(nn, training_set, epochs, batch_size, alpha,
     n = len(training_set)
     if treshold:
         nn.treshold = treshold
-    treshold_possibles = np.linspace(0.65, 0.85, 20)
     treshold_last_values = [[] for t in treshold_possibles]
     if time_limit:
         epochs = 100000
